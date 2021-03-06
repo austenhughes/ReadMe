@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const generateMarkdown =require('./generateMarkdown');
+const generateMarkdown =require('./generateMarkdown');
 
 let licenseInfo= "";
 let badge="";
@@ -74,39 +74,27 @@ const questions = () =>
     },
   ]);
 
-const writeReadMe = (answers) =>
-`# ${answers.title}
-${answers.license}
-${answers.description}
-
-## table of contents
--[Instalation](#instalation)
--[Usage](#usage)
--[Contributers](#contributers)
--[Recourses](#Recourses)
--[Github](#Github)
--[Email](#Email)
-
-## Instalation 
-${answers.instalation}
-## Usage 
-${answers.usage}
-## Contributers 
-${answers.colab}
-## tests 
-${answers.test}
-## Recourses 
-${answers.recoures}
-## Github 
-[github](${answers.github})
-## Email 
-[Email](${answers.email})
-`;
+class Answers {
+  constructor(title, description, intalation, license, usage, colab, test, recourses, github, email, bagde){
+  this.title = title;
+  this.description = description;
+  this.intalation = intalation;
+  this.license = license;
+  this.usage =usage;
+  this.colab = colab;
+  this.test = test;
+  this.recourses = recourses;
+  this.github =github;
+  this.email = email;
+  this.badge = badge;
+} 
+}
 
 const init = () => {
   questions().then((answers) => {
     try {
-      const readMe = writeReadMe(answers);
+      const readMe = generateMarkdown.generateMarkdown(Answers);
+      licenseInfo=Answers.license
       fs.writeFileSync('NewReadMe.md', readMe);
       getBadge();
     } catch (error) {
@@ -132,10 +120,14 @@ function getBadge(){
           badge="[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
           fs.writeFileSync("license.md", badge);
         break;
+      case "BSD 2-Clause Simplifid License":
+          badge="[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)"
+          fs.writeFileSync("license.md", badge);
+        break;
       default:
           badge="nothing"
           fs.writeFileSync("license.md", badge);
     }
 }
 
-// module.exports = writeReadMe;
+module.exports = Answers;

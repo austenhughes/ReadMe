@@ -1,7 +1,9 @@
-function generateMarkdown(answers) {
-  return `# ${answers.title}
-${answers.license}
-${answers.description}
+const Answers =require('./index.js');
+
+function generateMarkdown(Answers) {
+  return `# ${Answers.title}
+${Answers.license}
+${Answers.description}
 
 ## table of contents
 -[Instalation](#instalation)
@@ -12,21 +14,20 @@ ${answers.description}
 -[Email](#Email)
 
 ## Instalation 
-${answers.instalation}
+${Answers.instalation}
 ## Usage 
-${answers.usage}
+${Answers.usage}
 ## Contributers 
-${answers.colab}
+${Answers.colab}
 ## tests 
-${answers.test}
+${Answers.test}
 ## Recourses 
-${answers.recoures}
+${Answers.recoures}
 ## Github 
-[github](${answers.github})
+[github](${Answers.github})
 ## Email 
-[Email](${answers.email})
-`;
-`;
+[Email](${Answers.email})
+`
 }
 
 module.exports = generateMarkdown;

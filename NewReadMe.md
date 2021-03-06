@@ -1,6 +1,7 @@
-# more
-MIT License
-typeing
+# h
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+Apache License 2.0
+g
 
 ## table of contents
 -[Instalation](#instalation)
@@ -11,16 +12,16 @@ typeing
 -[Email](#Email)
 
 ## Instalation 
-to
+
 ## Usage 
-test
+
 ## Contributers 
-if 
+
 ## tests 
-this
+
 ## Recourses 
-works
+
 ## Github 
-[github](maybe)
+[github]()
 ## Email 
-[Email](please)
+[Email]()
