@@ -1,6 +1,9 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const GenerateMarkdown = require('./generateMarkdown.js');
+// const generateMarkdown =require('./generateMarkdown');
+
+let licenseInfo= "";
+let badge="";
 
 const questions = () =>
   inquirer.prompt([
@@ -44,11 +47,6 @@ const questions = () =>
       name: 'usage',
       message: 'How do you use this program?',
     },
-    // {
-    //   type: 'input',
-    //   name: 'visual',
-    //   message: 'link to visual aid : ',
-    // },
     {
       type: 'input',
       name: 'colab',
@@ -79,25 +77,29 @@ const questions = () =>
 const writeReadMe = (answers) =>
 `# ${answers.title}
 ${answers.license}
-${GenerateMarkdown}
 ${answers.description}
+
 ## table of contents
-${answers.contents}
-## instalation 
+-[Instalation](#instalation)
+-[Usage](#usage)
+-[Contributers](#contributers)
+-[Recourses](#Recourses)
+-[Github](#Github)
+-[Email](#Email)
+
+## Instalation 
 ${answers.instalation}
-## usage 
+## Usage 
 ${answers.usage}
-## visual aid 
-${answers.visual}
-## contributer 
+## Contributers 
 ${answers.colab}
 ## tests 
 ${answers.test}
-## recourses 
+## Recourses 
 ${answers.recoures}
-## github 
+## Github 
 [github](${answers.github})
-## email 
+## Email 
 [Email](${answers.email})
 `;
 
@@ -106,6 +108,7 @@ const init = () => {
     try {
       const readMe = writeReadMe(answers);
       fs.writeFileSync('NewReadMe.md', readMe);
+      getBadge();
     } catch (error) {
       console.log(error);
     }
@@ -114,4 +117,25 @@ const init = () => {
 
 init();
 
-module.exports = ;
+function getBadge(){
+
+  switch (licenseInfo) {
+      case "Apache License 2.0":
+          badge="[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+          fs.writeFileSync("license.md", badge);
+        break;
+      case "GNU General Public License v3.0":
+          badge="[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
+          fs.writeFileSync("license.md", badge);
+        break;
+      case "MIT License":
+          badge="[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+          fs.writeFileSync("license.md", badge);
+        break;
+      default:
+          badge="nothing"
+          fs.writeFileSync("license.md", badge);
+    }
+}
+
+// module.exports = writeReadMe;
