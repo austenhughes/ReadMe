@@ -24,7 +24,7 @@ You will be asked for:
 The application will then take all of this information and format a nice readMe markdown 
 Including 
     -License icons you can click on to take you to that license page 
-	-Working table on contents 
+	-Working table of contents 
 	-github and email set up as links 
 
 Recourses : 
@@ -33,5 +33,5 @@ https://www.npmjs.com/package/inquirer
 
 link to video of use : 
 
-link to github repo : 
+github repo : https://github.com/austenhughes/ReadMe
 
