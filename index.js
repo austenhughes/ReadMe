@@ -15,27 +15,27 @@ const questions = () =>
     {
       type: 'input',
       name: 'description',
-      message: 'Please discribe youre project :',
+      message: 'Please describe your project :',
     },
     {
       type: 'input',
-      name: 'instalation',
-      message: 'Nesissary instalations : ',
+      name: 'installation',
+      message: 'Necessary installations : ',
     },
     {
       type:'list',
       name:'license',
-      message:'select aplicable license : ',
+      message:'select license : ',
       choices : [
         "Apache License 2.0",
         "GNU General Public License v3.0",
         "MIT License",
-        "BSD 2-Clause Simplifid License",
-        "BSD 3-Clquse New or Revised License",
+        "BSD 2-Clause Simplified License",
+        "BSD 3-Clause New or Revised License",
         "Boost Software License 1.0",
         "Eclipse Public License 1.0",
-        "GNU Affero General Public Licenese v3.0",
-        "GNU Genral Public Licenese v2.0",
+        "GNU Affero General Public License v3.0",
+        "GNU General Public License v2.0",
         "Mozilla Public License 2.0",
         "The Unlicense"
       ]
@@ -57,7 +57,7 @@ const questions = () =>
     },
     {
       type: 'input',
-      name: 'recoures',
+      name: 'recourses',
       message: 'What recourses where used in the building of this project?',
     },
     {
@@ -68,7 +68,7 @@ const questions = () =>
     {
       type: 'input',
       name: 'email',
-      message: 'Enter your email adress.',
+      message: 'Enter your email address.',
     },
   ]);
 
@@ -79,23 +79,24 @@ ${badge}<br />
 ${answers.description}
 
 ## table of contents
-[Instalation](#instalation)<br />
-[Usage](#usage)<br />
-[Contributers](#contributers)<br />
+[Installation](#Installation)<br />
+[Usage](#Usage)<br />
+[Contributors](#Contributors)<br />
+[Tests](#Tests)<br />
 [Recourses](#Recourses)<br />
 [Github](#Github)<br />
 [Email](#Email)<br />
 
-## Instalation 
-${answers.instalation}
+## Installation 
+${answers.installation}
 ## Usage 
 ${answers.usage}
-## Contributers 
+## Contributors 
 ${answers.colab}
-## tests 
+## Tests 
 ${answers.test}
 ## Recourses 
-${answers.recoures}
+${answers.recourses}
 ## Questions? ... find me at : 
 ## Github 
 [${answers.github}](${answers.github})
@@ -139,7 +140,7 @@ function getBadge(){
       case "MIT License":
           badge="[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
         break;
-      case "BSD 2-Clause Simplifid License":
+      case "BSD 2-Clause Simplified License":
           badge="[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)"
         break;
       case "BSD 3-Clause New or Revised License":
@@ -151,10 +152,10 @@ function getBadge(){
       case "Eclipse Public License 1.0":
           badge="[![License](https://img.shields.io/badge/License-EPL%201.0-red.svg)](https://opensource.org/licenses/EPL-1.0)"          
         break;
-      case "GNU Affero General Public Licenese v3.0":
+      case "GNU Affero General Public License v3.0":
           badge="[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)"          
         break;
-      case "GNU Genral Public Licenese v2.0":
+      case "GNU General Public License v2.0":
           badge="[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)"          
         break;
       case "Mozilla Public License 2.0":
