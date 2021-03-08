@@ -31,7 +31,7 @@ Recourses :
 https://www.w3schools.com/
 https://www.npmjs.com/package/inquirer
 
-link to video of use : 
+link to video of use : https://drive.google.com/file/d/1db80gfYta5j6oyDJbdC1m5vLLxTtHat4/view?usp=sharing
 
 github repo : https://github.com/austenhughes/ReadMe
 
